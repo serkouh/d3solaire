@@ -136,43 +136,43 @@ class page2_fastState extends State<page2_fast>
     "0",
   ];
   List<String> solax = [
-    "3000",
-    "4000",
-    "5000",
-    "8000",
-    "10000",
-    "15000",
-    "20000",
-    "30000",
-    "40000",
-    "50000",
-    "60000",
+    "3",
+    "4",
+    "5",
+    "8",
+    "10",
+    "15",
+    "20",
+    "30",
+    "40",
+    "50",
+    "60",
   ];
   List<String> SMA = [
-    "3000",
-    "4000",
-    "5000",
-    "8000",
-    "10000",
-    "15000",
-    "20000",
-    "25000",
-    "50000",
+    "6",
+    "4",
+    "5",
+    "8",
+    "10",
+    "15",
+    "20",
+    "25",
+    "50",
   ];
   List<String> huawei = [
-    "3000",
-    "4000",
-    "5000",
-    "8000",
-    "10000",
-    "12000",
-    "15000",
-    "20000",
-    "30000",
-    "40000",
-    "50000",
-    "60000",
-    "100000",
+    "3",
+    "4",
+    "5",
+    "8",
+    "10",
+    "12",
+    "15",
+    "20",
+    "30",
+    "40",
+    "50",
+    "60",
+    "100",
   ];
   List<String> hint3 = [
     "3	",
@@ -250,8 +250,8 @@ class page2_fastState extends State<page2_fast>
     }*/
 
     setState(() {
-      puissanceT = double.parse(puiss.text.replaceAll(',', '.'));
-      ConsEnergie = double.parse(pui.text.replaceAll(',', '.'));
+      puissanceT = double.parse(pui.text.replaceAll(',', '.'));
+      ConsEnergie = double.parse(puiss.text.replaceAll(',', '.'));
       energieWh = ConsEnergie * 1.25;
       onduleur = puissanceT;
       pick = 0;
@@ -271,7 +271,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 2;
         onn2 = 32;
         onn3 = 80;
-        onn4 = 0;
+        onn4 = 1;
         onn5 = 0;
         onn6 = 0;
         stringnbr1 = 2;
@@ -299,7 +299,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 3;
         onn2 = 60;
         onn3 = 145;
-        onn4 = 0;
+        onn4 = 1;
         onn5 = 0;
         onn6 = 0;
         stringnbr1 = 3;
@@ -327,7 +327,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 5;
         onn2 = 80;
         onn3 = 145;
-        onn4 = 0;
+        onn4 = 1;
         onn5 = 0;
         onn6 = 0;
         stringnbr1 = 3;
@@ -355,7 +355,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 3;
         onn2 = 60;
         onn3 = 145;
-        onn4 = 3;
+        onn4 = 2;
         onn5 = 60;
         onn6 = 145;
         stringnbr1 = 3;
@@ -384,13 +384,41 @@ class page2_fastState extends State<page2_fast>
         onn1 = 5;
         onn2 = 80;
         onn3 = 145;
-        onn4 = 5;
+        onn4 = 2;
         onn5 = 80;
         onn6 = 145;
         stringnbr1 = 3;
         soulage > 12 ? stringnbr2 = 6 : stringnbr2 = 4;
 
         soulage > 12 ? paneauxnbr1 = soulage / 6 : paneauxnbr1 = soulage / 4;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 15000) {
+        onn1 = 5;
+        onn2 = 80;
+        onn3 = 145;
+        onn4 = 3;
+        onn5 = 80;
+        onn6 = 145;
+        stringnbr1 = 3;
+        soulage > 18 ? stringnbr2 = 9 : stringnbr2 = 6;
+
+        soulage > 18 ? paneauxnbr1 = soulage / 9 : paneauxnbr1 = soulage / 6;
         paneauxnbr1.toString().contains('.')
             ? paneauxnbr1.toString().substring(
                         paneauxnbr1.toString().indexOf('.'),
@@ -468,8 +496,8 @@ class page2_fastState extends State<page2_fast>
     }*/
 
     setState(() {
-      puissanceT = double.parse(puiss.text.replaceAll(',', '.'));
-      ConsEnergie = double.parse(pui.text.replaceAll(',', '.'));
+      puissanceT = double.parse(pui.text.replaceAll(',', '.'));
+      ConsEnergie = double.parse(puiss.text.replaceAll(',', '.'));
       energieWh = ConsEnergie * 1.25 * (initTime / 100);
       onduleur = puissanceT;
       pick = 0;
@@ -487,21 +515,21 @@ class page2_fastState extends State<page2_fast>
 
       if (_tabTextIconIndexSelected == 0) {
         for (String s in solax) {
-          if (double.parse(s) > temp1 * 0.8) {
+          if ((double.parse(s) * 1000) > puissanceT * 0.8) {
             temp4 = double.parse(s);
             break;
           }
         }
       } else if (_tabTextIconIndexSelected == 1) {
         for (String s in SMA) {
-          if (double.parse(s) > temp1 * 0.8) {
+          if ((double.parse(s) * 1000) > puissanceT * 0.8) {
             temp4 = double.parse(s);
             break;
           }
         }
       } else {
         for (String s in huawei) {
-          if (double.parse(s) > temp1 * 0.8) {
+          if ((double.parse(s) * 1000) > puissanceT * 0.8) {
             temp4 = double.parse(s);
             break;
           }
@@ -540,8 +568,8 @@ class page2_fastState extends State<page2_fast>
     }
 */
     setState(() {
-      puissanceT = double.parse(puiss.text.replaceAll(',', '.'));
-      ConsEnergie = double.parse(pui.text.replaceAll(',', '.'));
+      puissanceT = double.parse(pui.text.replaceAll(',', '.'));
+      ConsEnergie = double.parse(puiss.text.replaceAll(',', '.'));
 
       energieWh = ConsEnergie * 1.25;
       onduleur = puissanceT;
@@ -567,7 +595,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 2;
         onn2 = 32;
         onn3 = 80;
-        onn4 = 0;
+        onn4 = 1;
         onn5 = 0;
         onn6 = 0;
         stringnbr1 = 2;
@@ -595,7 +623,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 3;
         onn2 = 60;
         onn3 = 145;
-        onn4 = 0;
+        onn4 = 1;
         onn5 = 0;
         onn6 = 0;
         stringnbr1 = 3;
@@ -623,7 +651,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 5;
         onn2 = 80;
         onn3 = 145;
-        onn4 = 0;
+        onn4 = 1;
         onn5 = 0;
         onn6 = 0;
         stringnbr1 = 3;
@@ -651,7 +679,7 @@ class page2_fastState extends State<page2_fast>
         onn1 = 3;
         onn2 = 60;
         onn3 = 145;
-        onn4 = 3;
+        onn4 = 2;
         onn5 = 60;
         onn6 = 145;
         stringnbr1 = 3;
@@ -679,13 +707,41 @@ class page2_fastState extends State<page2_fast>
         onn1 = 5;
         onn2 = 80;
         onn3 = 145;
-        onn4 = 5;
+        onn4 = 2;
         onn5 = 80;
         onn6 = 145;
         stringnbr1 = 3;
         soulage > 12 ? stringnbr2 = 6 : stringnbr2 = 4;
 
         soulage > 12 ? paneauxnbr1 = soulage / 6 : paneauxnbr1 = soulage / 4;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 15000) {
+        onn1 = 5;
+        onn2 = 80;
+        onn3 = 145;
+        onn4 = 3;
+        onn5 = 80;
+        onn6 = 145;
+        stringnbr1 = 3;
+        soulage > 18 ? stringnbr2 = 9 : stringnbr2 = 6;
+
+        soulage > 18 ? paneauxnbr1 = soulage / 9 : paneauxnbr1 = soulage / 6;
         paneauxnbr1.toString().contains('.')
             ? paneauxnbr1.toString().substring(
                         paneauxnbr1.toString().indexOf('.'),

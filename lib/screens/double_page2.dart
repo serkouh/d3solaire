@@ -94,7 +94,6 @@ class _hisdocState extends State<hisdoc> {
                     ],
                   ),
                 ),
-                // Sample pages
                 Padding(
                   padding: EdgeInsets.only(top: 70),
                   child: TabBarView(

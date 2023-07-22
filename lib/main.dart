@@ -128,19 +128,19 @@ class CurvedNavWidgetState extends State<CurvedNavWidget> {
           }
         },
         child: MaterialApp(
-          themeMode: ThemeMode.light,
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-          ),
-          darkTheme: ThemeData.dark(),
-          home: goto == 1
-              ? MyStatefulWidget()
-              : goto == 0
+            themeMode: ThemeMode.light,
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+            ),
+            darkTheme: ThemeData.dark(),
+            home: // goto == 1
+                MyStatefulWidget()
+            /* : goto == 0
                   ? batt_data()
-                  : screen_2(),
-        ));
+                  : screen_2(),*/
+            ));
   }
 }

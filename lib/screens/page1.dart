@@ -1306,7 +1306,7 @@ class Page1State extends State<Page1>
                                           ),
                                           child: Column(children: [
                                             AutoSizeText(
-                                              'x pouce : y metre cube par heur ',
+                                              'x pouce : y metre cube par heure ',
                                               style: TextStyle(
                                                   color: Colors.white),
                                               maxLines: 1,
@@ -1379,7 +1379,7 @@ class Page1State extends State<Page1>
                                   borderSide: BorderSide(color: Colors.blue),
                                   borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                labelText: 'Pc en Wh',
+                                labelText: 'Pc en W',
                                 labelStyle: TextStyle(
                                   color: Colors.grey,
                                   fontWeight: FontWeight.bold,

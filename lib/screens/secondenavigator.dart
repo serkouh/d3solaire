@@ -5,6 +5,8 @@ import 'package:solaire/screens/page2.dart';
 import 'package:solaire/screens/page3.dart';
 import 'package:solaire/screens/page4.dart';
 import 'package:flutter/material.dart';
+import 'package:solaire/screens/shows_db.dart';
+import 'package:solaire/screens/update_db.dart';
 
 import 'double_page2.dart';
 import 'package:flutter/src/material/scaffold.dart' as chuchu;
@@ -25,6 +27,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static List<Widget> _widgetOptions = <Widget>[
     Page1(),
     hisdoc(),
+    BrandsListScreen(),
     /* double_page3(),
     double_page4(),*/
   ];
@@ -66,6 +69,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   : Colors.white,
             ),
             label: 'Urbain',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: _selectedIndex == 0
+                  ? Color.fromARGB(255, 196, 196, 197)
+                  : Colors.white,
+            ),
+            label: 'test',
           ),
         ],
         currentIndex: _selectedIndex,

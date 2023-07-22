@@ -193,7 +193,7 @@ class Page2ViewState extends State<Page2View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Puissance disponible en KW',
+                                      message: 'Puissance onduleur',
                                       child: AutoSizeText(
                                         'p = ${widget.onn1.toStringAsFixed(0)} KW',
                                         style: TextStyle(color: Colors.green),
@@ -226,7 +226,7 @@ class Page2ViewState extends State<Page2View> {
                                               Color.fromARGB(255, 25, 83, 163)),
                                       message: 'Nombre d\'onduleur',
                                       child: AutoSizeText(
-                                        'N = ${widget.onn4 == 0 ? 1 : 2} U',
+                                        'N = ${widget.onn4 == 1 ? 1 : widget.onn4 == 2 ? 2 : 3} U',
                                         style: TextStyle(color: Colors.green),
                                         maxLines: 1,
                                       ),
@@ -483,9 +483,9 @@ class Page2ViewState extends State<Page2View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Puissance crete optimal en Wc',
+                                      message: 'Puissance crete optimal',
                                       child: AutoSizeText(
-                                        'Pc = ${widget.FournirW.toStringAsFixed(0)} W',
+                                        'Pc = ${widget.FournirW.toStringAsFixed(0)} Wc',
                                         maxLines: 1,
                                       ),
                                     )),
@@ -766,7 +766,7 @@ class Page2ViewState extends State<Page2View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Capacite utile en Ah',
+                                      message: 'Capacite utile',
                                       child: AutoSizeText(
                                         'Cu = ${widget.AHBattrie.toStringAsFixed(0)} Ah',
                                         style: TextStyle(color: Colors.green),
@@ -831,7 +831,7 @@ class Page2ViewState extends State<Page2View> {
                                                 255, 25, 83, 163)),
                                         message: 'Puissance de stock',
                                         child: AutoSizeText(
-                                          'Ps = ${widget.puissanceT.toStringAsFixed(0)} Ah',
+                                          'Ps = ${widget.puissanceT.toStringAsFixed(0)} Wh',
                                           maxLines: 1,
                                         ),
                                       )),
@@ -860,7 +860,7 @@ class Page2ViewState extends State<Page2View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Consomation max en Wh',
+                                      message: 'Consomation max',
                                       child: AutoSizeText(
                                         'PC = ${(widget.energieWh * 1).toStringAsFixed(0)} Wh',
                                         maxLines: 1,

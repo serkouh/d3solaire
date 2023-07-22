@@ -282,37 +282,6 @@ class page1ViewState extends State<page1View> {
                                 GestureDetector(
                                     onTap: () {
                                       final dynamic _toolTip =
-                                          _toolTipKey16.currentState;
-                                      _toolTip.ensureTooltipVisible();
-                                    },
-                                    child: Tooltip(
-                                      key: _toolTipKey16,
-                                      waitDuration: Duration(seconds: 0),
-                                      showDuration: Duration(seconds: 4),
-                                      padding: EdgeInsets.all(5),
-                                      height: 35,
-                                      textStyle: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.normal),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color:
-                                              Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Nombre panneaux',
-                                      child: AutoSizeText(
-                                        'N = ${widget.TBattrie.toStringAsFixed(0)} U',
-                                        style: TextStyle(color: Colors.green),
-                                        maxLines: 1,
-                                      ),
-                                    )),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                GestureDetector(
-                                    onTap: () {
-                                      final dynamic _toolTip =
                                           _toolTipKey9.currentState;
                                       _toolTip.ensureTooltipVisible();
                                     },
@@ -334,6 +303,37 @@ class page1ViewState extends State<page1View> {
                                       message: 'Puissance plaque',
                                       child: AutoSizeText(
                                         'Pv = ${widget.stringnbr2.toStringAsFixed(0)} W',
+                                        style: TextStyle(color: Colors.green),
+                                        maxLines: 1,
+                                      ),
+                                    )),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                GestureDetector(
+                                    onTap: () {
+                                      final dynamic _toolTip =
+                                          _toolTipKey16.currentState;
+                                      _toolTip.ensureTooltipVisible();
+                                    },
+                                    child: Tooltip(
+                                      key: _toolTipKey16,
+                                      waitDuration: Duration(seconds: 0),
+                                      showDuration: Duration(seconds: 4),
+                                      padding: EdgeInsets.all(5),
+                                      height: 35,
+                                      textStyle: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.normal),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color:
+                                              Color.fromARGB(255, 25, 83, 163)),
+                                      message: 'Nombre panneaux',
+                                      child: AutoSizeText(
+                                        'N = ${widget.TBattrie.toStringAsFixed(0)} U',
                                         style: TextStyle(color: Colors.green),
                                         maxLines: 1,
                                       ),
@@ -499,6 +499,41 @@ class page1ViewState extends State<page1View> {
                                         message: 'Puissance pompe',
                                         child: AutoSizeText(
                                           'P = ${(double.parse(((widget.stringnbr1 * 1.36) / 1000).toStringAsFixed(0))).toStringAsFixed(0)} Ch',
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                              color: widget.energieWh <
+                                                      widget.FournirW
+                                                  ? Colors.red
+                                                  : Colors.green),
+                                        ),
+                                      )),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  GestureDetector(
+                                      onTap: () {
+                                        final dynamic _toolTip =
+                                            _toolTipKey5.currentState;
+                                        _toolTip.ensureTooltipVisible();
+                                      },
+                                      child: Tooltip(
+                                        key: _toolTipKey5,
+                                        waitDuration: Duration(seconds: 0),
+                                        showDuration: Duration(seconds: 4),
+                                        padding: EdgeInsets.all(5),
+                                        height: 10,
+                                        textStyle: TextStyle(
+                                            fontSize: 15,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.normal),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Color.fromARGB(
+                                                255, 25, 83, 163)),
+                                        message: 'Puissance pompe',
+                                        child: AutoSizeText(
+                                          'P = ${(double.parse((((widget.stringnbr1 * 1.36) / 1000) / 1.36).toStringAsFixed(1))).toStringAsFixed(1)} Kw',
                                           maxLines: 1,
                                           style: TextStyle(
                                               color: widget.energieWh <

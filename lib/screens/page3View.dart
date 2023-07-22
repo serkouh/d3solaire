@@ -110,7 +110,7 @@ class Page3ViewState extends State<Page3View> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                /*  GestureDetector(
+                                /*    GestureDetector(
                                     onTap: () {
                                       final dynamic _toolTip =
                                           _toolTipKey2.currentState;
@@ -143,42 +143,11 @@ class Page3ViewState extends State<Page3View> {
                                 GestureDetector(
                                     onTap: () {
                                       final dynamic _toolTip =
-                                          _toolTipKey10.currentState;
+                                          _toolTipKey3.currentState;
                                       _toolTip.ensureTooltipVisible();
                                     },
                                     child: Tooltip(
-                                      key: _toolTipKey10,
-                                      waitDuration: Duration(seconds: 0),
-                                      showDuration: Duration(seconds: 4),
-                                      padding: EdgeInsets.all(5),
-                                      height: 35,
-                                      textStyle: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.normal),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color:
-                                              Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Tension max',
-                                      child: AutoSizeText(
-                                        'Uv = ${widget.onn3.toStringAsFixed(0)} V',
-                                        maxLines: 1,
-                                      ),
-                                    )),
-                                const SizedBox(
-                                  height: 20,
-                                ),*/
-
-                                /*    GestureDetector(
-                                    onTap: () {
-                                      final dynamic _toolTip =
-                                          _toolTipKey11.currentState;
-                                      _toolTip.ensureTooltipVisible();
-                                    },
-                                    child: Tooltip(
-                                      key: _toolTipKey11,
+                                      key: _toolTipKey3,
                                       waitDuration: Duration(seconds: 0),
                                       showDuration: Duration(seconds: 4),
                                       padding: EdgeInsets.all(5),
@@ -192,9 +161,9 @@ class Page3ViewState extends State<Page3View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Intensite max',
+                                      message: 'Puissance onduleur min',
                                       child: AutoSizeText(
-                                        'Iv = ${widget.onn2.toStringAsFixed(0)} A',
+                                        'p = ${widget.onduleur.toStringAsFixed(0)} W',
                                         maxLines: 1,
                                       ),
                                     )),
@@ -222,9 +191,71 @@ class Page3ViewState extends State<Page3View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Puissance disponible en KW',
+                                      message: 'Puissance onduleur',
                                       child: AutoSizeText(
-                                        'Pd = ${widget.onn1.toStringAsFixed(0)} W',
+                                        'p = ${widget.onn1.toStringAsFixed(0)} KW',
+                                        style: TextStyle(color: Colors.green),
+                                        maxLines: 1,
+                                      ),
+                                    )),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                GestureDetector(
+                                    onTap: () {
+                                      final dynamic _toolTip =
+                                          _toolTipKey7.currentState;
+                                      _toolTip.ensureTooltipVisible();
+                                    },
+                                    child: Tooltip(
+                                      key: _toolTipKey7,
+                                      waitDuration: Duration(seconds: 0),
+                                      showDuration: Duration(seconds: 4),
+                                      padding: EdgeInsets.all(5),
+                                      height: 35,
+                                      textStyle: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.normal),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color:
+                                              Color.fromARGB(255, 25, 83, 163)),
+                                      message: 'Nombre d\'onduleur',
+                                      child: AutoSizeText(
+                                        'N = ${widget.onn4 == 1 ? 1 : widget.onn4 == 2 ? 2 : 3} U',
+                                        style: TextStyle(color: Colors.green),
+                                        maxLines: 1,
+                                      ),
+                                    )),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                GestureDetector(
+                                    onTap: () {
+                                      final dynamic _toolTip =
+                                          _toolTipKey5.currentState;
+                                      _toolTip.ensureTooltipVisible();
+                                    },
+                                    child: Tooltip(
+                                      key: _toolTipKey5,
+                                      waitDuration: Duration(seconds: 0),
+                                      showDuration: Duration(seconds: 4),
+                                      padding: EdgeInsets.all(5),
+                                      height: 35,
+                                      textStyle: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.normal),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color:
+                                              Color.fromARGB(255, 25, 83, 163)),
+                                      message: 'Tension onduleur',
+                                      child: AutoSizeText(
+                                        'Udc = ${widget.TBattrie.toStringAsFixed(0)} V',
                                         style: TextStyle(color: Colors.green),
                                         maxLines: 1,
                                       ),
@@ -264,11 +295,11 @@ class Page3ViewState extends State<Page3View> {
                                 GestureDetector(
                                     onTap: () {
                                       final dynamic _toolTip =
-                                          _toolTipKey7.currentState;
+                                          _toolTipKey10.currentState;
                                       _toolTip.ensureTooltipVisible();
                                     },
                                     child: Tooltip(
-                                      key: _toolTipKey7,
+                                      key: _toolTipKey10,
                                       waitDuration: Duration(seconds: 0),
                                       showDuration: Duration(seconds: 4),
                                       padding: EdgeInsets.all(5),
@@ -282,10 +313,9 @@ class Page3ViewState extends State<Page3View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Nombre d\'onduleur',
+                                      message: 'Tension max',
                                       child: AutoSizeText(
-                                        'N = ${widget.onn4 == 0 ? 1 : 2} U',
-                                        style: TextStyle(color: Colors.green),
+                                        'Uv = ${widget.onn3.toStringAsFixed(0)} V',
                                         maxLines: 1,
                                       ),
                                     )),
@@ -295,11 +325,11 @@ class Page3ViewState extends State<Page3View> {
                                 GestureDetector(
                                     onTap: () {
                                       final dynamic _toolTip =
-                                          _toolTipKey3.currentState;
+                                          _toolTipKey11.currentState;
                                       _toolTip.ensureTooltipVisible();
                                     },
                                     child: Tooltip(
-                                      key: _toolTipKey3,
+                                      key: _toolTipKey11,
                                       waitDuration: Duration(seconds: 0),
                                       showDuration: Duration(seconds: 4),
                                       padding: EdgeInsets.all(5),
@@ -313,42 +343,13 @@ class Page3ViewState extends State<Page3View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Puissance onduleur min',
+                                      message: 'Intensite max',
                                       child: AutoSizeText(
-                                        'P = ${widget.onduleur.toStringAsFixed(0)} W',
+                                        'Iv = ${widget.onn2.toStringAsFixed(0)} A',
                                         maxLines: 1,
                                       ),
                                     )),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                /*   GestureDetector(
-                                    onTap: () {
-                                      final dynamic _toolTip =
-                                          _toolTipKey5.currentState;
-                                      _toolTip.ensureTooltipVisible();
-                                    },
-                                    child: Tooltip(
-                                      key: _toolTipKey5,
-                                      waitDuration: Duration(seconds: 0),
-                                      showDuration: Duration(seconds: 4),
-                                      padding: EdgeInsets.all(5),
-                                      height: 35,
-                                      textStyle: TextStyle(
-                                          fontSize: 15,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.normal),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color:
-                                              Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Tension onduleur',
-                                      child: AutoSizeText(
-                                        'Udc = ${widget.TBattrie.toStringAsFixed(0)} V',
-                                        maxLines: 1,
-                                      ),
-                                    )),*/
+
                                 /* const SizedBox(
                                   height: 20,
                                 ),*/ /*   Text('nombre de panneaux exacte	     '),
@@ -500,7 +501,7 @@ class Page3ViewState extends State<Page3View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Puissance crete optimal en Wc',
+                                      message: 'Puissance crete optimal',
                                       child: AutoSizeText(
                                         'Pc = ${widget.FournirW.toStringAsFixed(0)} W',
                                         maxLines: 1,
@@ -561,7 +562,7 @@ class Page3ViewState extends State<Page3View> {
                                               BorderRadius.circular(10),
                                           color:
                                               Color.fromARGB(255, 25, 83, 163)),
-                                      message: 'Consomation max en Wh',
+                                      message: 'Consomation max',
                                       child: AutoSizeText(
                                         'PC = ${(widget.energieWh * 1).toStringAsFixed(0)} Wh',
                                         maxLines: 1,
