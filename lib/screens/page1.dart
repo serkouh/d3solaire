@@ -244,12 +244,13 @@ class Page1State extends State<Page1>
           double.parse(T.P_en_watt)) {
         setState(() {
           puissance1 = T.P_en_watt;
-          c_entre1 = T.crt_entree;
+          c_entre1 = T.crt_DCmax;
           c_sortie1 = T.crt_sortie;
-          c_max1 = T.crt_DCmax;
+          c_max1 = T.crt_entree;
           nbr_ = ((double.parse(pass.text.replaceAll(',', '.')) * 1.3) /
                   double.parse(PC.text.replaceAll(',', '.')))
-              .toStringAsFixed(0);
+              .toStringAsFixed(2);
+          print(nbr_.toString() + 'bbbbbbbbbbbbbbbbbbbbbbbbbb');
 
           /*  int.parse(nbr_) % 2 == 0
               ? nbr_ = (int.parse(nbr_) + 2).toString()
@@ -258,10 +259,12 @@ class Page1State extends State<Page1>
                       double.parse(Voc.text.replaceAll(',', '.'))) /
                   650)
               .toStringAsFixed(2);
+          print(nbr_string.toString() + 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 
-          if (nbr_string[nbr_string.length - 2] == '1' ||
-              nbr_string[nbr_string.length - 2] == '0' ||
-              nbr_string[nbr_string.length - 2] == '2') {
+          if ((nbr_string[nbr_string.length - 2] == '1' ||
+                  nbr_string[nbr_string.length - 2] == '0' ||
+                  nbr_string[nbr_string.length - 2] == '2') &&
+              double.parse(nbr_string) >= 1) {
             nbr_string = double.parse(double.parse(nbr_string)
                     .toStringAsFixed(2)
                     .substring(0,
@@ -278,35 +281,11 @@ class Page1State extends State<Page1>
                 .toStringAsFixed(0);
           }
           temp = double.parse(nbr_) / double.parse(nbr_string);
-          print(temp.toString() + 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 
-          /* if ((temp.toStringAsFixed(2)[temp.toStringAsFixed(2).length - 2] ==
-                      '1' &&
-                  double.parse(temp.toStringAsFixed(2).substring(
-                              0, temp.toStringAsFixed(2).length - 2)) %
-                          2 ==
-                      0) ||
-              (temp.toStringAsFixed(2)[temp.toStringAsFixed(2).length - 2] ==
-                      '2' &&
-                  double.parse(temp.toStringAsFixed(2).substring(
-                              0, temp.toStringAsFixed(2).length - 2)) %
-                          2 ==
-                      0)) {
-            temp = double.parse(temp
-                .toStringAsFixed(2)
-                .substring(0, temp.toStringAsFixed(2).length - 2));
-          } else if (double.parse(temp.toStringAsFixed(0)) % 2 == 1) {
-            temp = double.parse(temp.toStringAsFixed(0)) + 1;
-          } else {
-            temp = double.parse(temp
-                    .toStringAsFixed(2)
-                    .substring(0, temp.toStringAsFixed(2).length - 2)) +
-                2;
-          }*/
           nbr_ =
               (double.parse(temp.toStringAsFixed(0)) * double.parse(nbr_string))
                   .toStringAsFixed(0);
-          // if(double.parse(T.P_en_watt) /(0.8*380*1.732))
+          print(temp.toString() + 'ccccccccccccccccccccccccccccc');
         });
         return;
       }

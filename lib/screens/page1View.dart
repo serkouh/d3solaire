@@ -333,7 +333,7 @@ class page1ViewState extends State<page1View> {
                                               Color.fromARGB(255, 25, 83, 163)),
                                       message: 'Nombre panneaux',
                                       child: AutoSizeText(
-                                        'N = ${widget.TBattrie.toStringAsFixed(0)} U',
+                                        'N = ${widget.TBattrie.toStringAsFixed(0) == '0' ? '1' : widget.TBattrie.toStringAsFixed(0)} U',
                                         style: TextStyle(color: Colors.green),
                                         maxLines: 1,
                                       ),
@@ -513,11 +513,11 @@ class page1ViewState extends State<page1View> {
                                   GestureDetector(
                                       onTap: () {
                                         final dynamic _toolTip =
-                                            _toolTipKey5.currentState;
+                                            _toolTipKey.currentState;
                                         _toolTip.ensureTooltipVisible();
                                       },
                                       child: Tooltip(
-                                        key: _toolTipKey5,
+                                        key: _toolTipKey,
                                         waitDuration: Duration(seconds: 0),
                                         showDuration: Duration(seconds: 4),
                                         padding: EdgeInsets.all(5),

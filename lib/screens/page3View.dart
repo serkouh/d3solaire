@@ -229,7 +229,7 @@ class Page3ViewState extends State<Page3View> {
                                         maxLines: 1,
                                       ),
                                     )),
-                                const SizedBox(
+                                /*  const SizedBox(
                                   height: 20,
                                 ),
                                 GestureDetector(
@@ -260,7 +260,7 @@ class Page3ViewState extends State<Page3View> {
                                         maxLines: 1,
                                       ),
                                     )),
-/*
+
                                 GestureDetector(
                                     onTap: () {
                                       final dynamic _toolTip =

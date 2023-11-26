@@ -5,6 +5,7 @@ import 'package:solaire/screens/page2.dart';
 import 'package:solaire/screens/page3.dart';
 import 'package:solaire/screens/page4.dart';
 import 'package:flutter/material.dart';
+import 'package:solaire/screens/pdf.dart';
 import 'package:solaire/screens/shows_db.dart';
 import 'package:solaire/screens/update_db.dart';
 
@@ -28,6 +29,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     Page1(),
     hisdoc(),
     BrandsListScreen(),
+    pddf(),
     /* double_page3(),
     double_page4(),*/
   ];
@@ -78,6 +80,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   : Colors.white,
             ),
             label: 'test',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: _selectedIndex == 0
+                  ? Color.fromARGB(255, 196, 196, 197)
+                  : Colors.white,
+            ),
+            label: 'PDF',
           ),
         ],
         currentIndex: _selectedIndex,

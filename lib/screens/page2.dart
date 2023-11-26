@@ -93,9 +93,9 @@ class Page2State extends State<Page2>
     "60",
   ];
   List<String> SMA = [
-    "6",
     "4",
     "5",
+    "6",
     "8",
     "10",
     "15",
@@ -290,7 +290,7 @@ class Page2State extends State<Page2>
     setState(() {
       puissanceT = temp1;
       ConsEnergie = temp2;
-      energieWh = ConsEnergie * 1.25;
+      energieWh = ConsEnergie * 1.2;
       onduleur = puissanceT;
       pick = temp3;
       puissanceT > 2000 ? TBattrie = 48 : TBattrie = 24;
@@ -536,7 +536,7 @@ class Page2State extends State<Page2>
     setState(() {
       puissanceT = temp1;
       ConsEnergie = temp2;
-      energieWh = ConsEnergie * 1.25 * (initTime / 100);
+      energieWh = ConsEnergie * 1.2 * (initTime / 100);
       onduleur = puissanceT;
       pick = temp3;
       puissanceT > 2000 ? TBattrie = 48 : TBattrie = 24;
@@ -574,6 +574,202 @@ class Page2State extends State<Page2>
         }
       }
       onn1 = temp4;
+      if (onduleur * 0.82 < 3000) {
+        onn1 = 3;
+        onn2 = 60;
+        onn3 = 145;
+        onn4 = 1;
+        onn5 = 0;
+        onn6 = 0;
+        stringnbr1 = 3;
+        soulage > 6 ? paneauxnbr1 = soulage / 3 : paneauxnbr1 = soulage / 2;
+        soulage > 6 ? stringnbr2 = 3 : stringnbr2 = 2;
+
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 5000) {
+        onn1 = 5;
+        onn2 = 80;
+        onn3 = 145;
+        onn4 = 1;
+        onn5 = 0;
+        onn6 = 0;
+        stringnbr1 = 3;
+        soulage > 6 ? paneauxnbr1 = soulage / 3 : paneauxnbr1 = soulage / 2;
+        soulage > 6 ? stringnbr2 = 3 : stringnbr2 = 2;
+
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 6000) {
+        onn1 = 3;
+        onn2 = 60;
+        onn3 = 145;
+        onn4 = 2;
+        onn5 = 60;
+        onn6 = 145;
+        stringnbr1 = 3;
+        soulage > 12 ? stringnbr2 = 6 : stringnbr2 = 4;
+
+        soulage > 12 ? paneauxnbr1 = soulage / 6 : paneauxnbr1 = soulage / 4;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 10000) {
+        onn1 = 5;
+        onn2 = 80;
+        onn3 = 145;
+        onn4 = 2;
+        onn5 = 80;
+        onn6 = 145;
+        stringnbr1 = 3;
+        soulage > 12 ? stringnbr2 = 6 : stringnbr2 = 4;
+
+        soulage > 12 ? paneauxnbr1 = soulage / 6 : paneauxnbr1 = soulage / 4;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 10000) {
+        onn1 = 5;
+        onn2 = 80;
+        onn3 = 145;
+        onn4 = 2;
+        onn5 = 80;
+        onn6 = 145;
+        stringnbr1 = 3;
+        soulage > 12 ? stringnbr2 = 6 : stringnbr2 = 4;
+
+        soulage > 12 ? paneauxnbr1 = soulage / 6 : paneauxnbr1 = soulage / 4;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else if (onduleur * 0.82 < 15000) {
+        onn1 = 5;
+        onn2 = 80;
+        onn3 = 145;
+        onn4 = 3;
+        onn5 = 80;
+        onn6 = 145;
+        stringnbr1 = 3;
+        soulage > 18 ? stringnbr2 = 6 : stringnbr2 = 4;
+
+        soulage > 12 ? paneauxnbr1 = soulage / 6 : paneauxnbr1 = soulage / 4;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      } else {
+        onn1 = 999;
+        onn2 = 999;
+        onn3 = 999;
+        onn4 = 999;
+        onn5 = 999;
+        onn6 = 999;
+        stringnbr1 = 999;
+        stringnbr2 = 999;
+        paneauxnbr1 = soulage / 6;
+        paneauxnbr1.toString().contains('.')
+            ? paneauxnbr1.toString().substring(
+                        paneauxnbr1.toString().indexOf('.'),
+                        paneauxnbr1.toString().indexOf('.') + 1) !=
+                    '0'
+                ? paneauxnbr1 = double.parse(paneauxnbr1
+                        .toStringAsFixed(2)
+                        .substring(
+                            0, paneauxnbr1.toStringAsFixed(2).length - 3)) +
+                    1
+                : paneauxnbr1 = double.parse(paneauxnbr1
+                    .toStringAsFixed(2)
+                    .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3))
+            : paneauxnbr1 = double.parse(paneauxnbr1
+                .toStringAsFixed(2)
+                .substring(0, paneauxnbr1.toStringAsFixed(2).length - 3));
+        //  soulage = paneauxnbr1 * 3;
+      }
     });
   }
 
@@ -608,7 +804,7 @@ class Page2State extends State<Page2>
     setState(() {
       puissanceT = temp1;
       ConsEnergie = temp2;
-      energieWh = ConsEnergie * 1.25;
+      energieWh = ConsEnergie * 1.2;
       onduleur = puissanceT;
       pick = temp3;
       puissanceT > 2000 ? TBattrie = 48 : TBattrie = 24;
